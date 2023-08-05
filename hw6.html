@@ -52,18 +52,15 @@
 
         for (let i = 0; i < 7; i++) {
           let ran = Math.floor(Math.random() * 3) + 1;
-          let final, rScore1, rScore2;
+          let rScore1, rScore2;
 
           if (ran === 1) {
-            final = "team1";
             rScore1 = Math.floor(Math.random() * 6);
             rScore2 = Math.floor(Math.random() * (rScore1 + 1));
           } else if (ran === 3) {
-            final = "team2";
             rScore1 = Math.floor(Math.random() * 5);
             rScore2 = Math.floor(Math.random() * (rScore1 + 1));
           } else {
-            final = "teko";
             rScore1 = Math.floor(Math.random() * 4);
             rScore2 = rScore1;
           }
