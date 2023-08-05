@@ -6,13 +6,16 @@
     <script>
 
 
-a = parseInt(prompt("enter number: "))
-b = parseInt(prompt("enter number: "))
+a = parseInt(prompt("enter width in cm: (Approximately) "))
+b = parseInt(prompt("enter height in cm: (Approximately) "))
+
+const pixCm = 37.8;
 
 
 while (a > 0 && b > 0 && a !== b) {
-
-    document.write(`<div style="border:blue; border-width:10px; border-style:outset; width: ${a}px; height: ${b}px;"></div>`)
+    const widthPix = a * pixCm;
+    const heightPix = b * pixCm;
+    document.write(`<div style="border:blue; border-width:10px; border-style:outset; width: ${widthPix}px; height: ${heightPix}px;"></div>`)
 a = 0
 b = -1
 }
