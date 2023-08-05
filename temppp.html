@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hw6</title>
+</head>
+<body>
+    <h2>Games Gamble Table</h2>
+    <table>
+        <script>
+            let teams = [
+                "Real Madrid CF",
+                "Manchester City",
+                "FC Bayern München",
+                "FC Barcelona",
+                "Liverpool FC",
+                "Manchester United",
+                "Sevilla CF",
+                "Chelsea FC",
+                "Atletico de Madrid",
+                "FC Internazionale",
+                "Paris Saint Germain"
+            ];
+
+            function getRandomTeam(existingTeams) {
+                let randomIndex = Math.floor(Math.random() * teams.length);
+                let selectedTeam = teams[randomIndex];
+                while (existingTeams.includes(selectedTeam)) {
+                    randomIndex = Math.floor(Math.random() * teams.length);
+                    selectedTeam = teams[randomIndex];
+                }
+                return selectedTeam;
+            }
+
+            for (let i = 0; i < 6; i++) {
+                let team1 = getRandomTeam([]);
+                let team2 = getRandomTeam([team1]);
+                let rScore1 = Math.floor(Math.random() * 5) + 1;
+                let rScore2 = Math.floor(Math.random() * 5) + 1;
+
+                document.write(`
+                <tr>
+                    <td>${team1}</td>
+                    <td>${rScore1}</td>
+                    <td>-</td>
+                    <td>${rScore2}</td>
+                    <td>${team2}</td>
+                </tr>
+                `);
+            }
+        </script>
+    </table>
+</body>
+</html>
