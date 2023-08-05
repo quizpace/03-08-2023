@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        document.write(`
+<h2>Games Gamble Table</h2>
+<table>
+  <tr>
+    <th>Team 1</th>
+    <th>Score 1</th>
+    <th>-</th>
+    <th>Score 2</th>
+    <th>Team 2</th>
+  </tr>
+`);
+
+for (let i = 0; i < 6; i++) {
+    let ran = Math.floor(Math.random() * 3) + 1;
+    let final, rScore1, rScore2;
+
+    if (ran === 1) {
+        final = "team1";
+        rScore1 = Math.floor(Math.random() * 5) + 1;
+        rScore2 = Math.floor(Math.random() * rScore1) + 1;
+    } else if (ran === 3) {
+        final = "team2";
+        rScore2 = Math.floor(Math.random() * 5) + 1;  
+        rScore1 = Math.floor(Math.random() * rScore2) + 1; 
+    } else {
+        final = "teko";
+        rScore1 = Math.floor(Math.random() * 5) + 1;
+        rScore2 = rScore1; 
+    }
+
+    document.write(`
+    <tr>
+        <td>Team ${i + 1}</td>
+        <td>${rScore1}</td>
+        <td>-</td>
+        <td>${rScore2}</td>
+        <td>Team ${i + 2}</td>
+    </tr>
+    `);
+}
+
+document.write(`</table>`);
+
+    </script>
+</body>
+</html>
