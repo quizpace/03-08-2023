@@ -15,18 +15,29 @@
         border: 2px solid #333;
       }
       td {
-        border: 1px solid #977bb1;
+        border: 1px solid #7f7884;
         padding: 8px;
         text-align: center;
-        border-radius: 10px;
-      }
-      th {
-        background-color: #f2f2f2;
       }
       h2 {
         color: #7b559f;
         margin-left: 34%;
         font-size: 28px;
+      }
+      .ball-anime {
+        animation: roll 4s infinite alternate;
+      }
+      @keyframes roll {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(40px);
+        }
+        75% {
+          transform: translateX(-40px);
+        }
       }
     </style>
   </head>
@@ -72,7 +83,7 @@
                 <tr>
                     <td>${teamsN[i]}</td>
                     <td>${rScore1}</td>
-                    <td>-</td>
+                    <td><img src="s.png" alt="Image" class="ball-anime" width="25" height="25"></td>
                     <td>${rScore2}</td>
                     <td>${teamsN[i + 9]}</td>
                 </tr>
