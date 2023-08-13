@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>homework3</title>
+</head>
+<body>
+    <script>
+
+const ran = Math.floor(Math.random() * 100) + 1;
+
+let num = parseInt(prompt('enter a number:'));
+
+while (num !== ran) {
+    if (num < ran) {
+    alert('Sorry, number is to low. Please try again.');
+    num = parseInt(prompt('try a higher number:'));
+    } else if (num > ran) {
+        alert('Sorry, number is to high. Please try again.');
+        num = parseInt(prompt('try a lower number:'));
+    }
+}
+
+if (num === ran) { alert('Congratulations! You guessed the secret number.'); }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>homework1</title>
+</head>
+<body>
+    <script>
+
+
+
+let sum = 0;
+let nums = 0;
+let max = 0; 
+
+while (sum < 1000) {
+    let a = parseInt(prompt('enter a number:'));
+    if (a > max) {
+        max = a;
+    }
+    sum += a;
+    nums += 1;
+}
+
+document.write(`${nums}<br />${max}`);
+
+    </script>
+</body>
+</html>
