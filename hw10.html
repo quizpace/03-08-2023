@@ -5,21 +5,38 @@
 <body>
     <script>
 
+
+
+let wannaPlay = prompt(`do you want to play (yes/no) ?`);
+
+
+while (wannaPlay == `yes`) {
+
 const ran = Math.floor(Math.random() * 100) + 1;
 
 let num = parseInt(prompt('Guess the number: (1 - 100)'));
 
-while (num !== ran) {
+let count = 1;
+
+    while (num !== ran) {
+    count++
     if (num < ran) {
     alert('Sorry, number is to low. Please try again.');
-    num = parseInt(prompt('try a higher number:'));
+    num = parseInt(prompt(`try a higher number than ${num}:`));
     } else if (num > ran) {
-        alert('Sorry, number is to high. Please try again.');
-        num = parseInt(prompt('try a lower number:'));
+        alert(`Sorry, number is to high. Please try again.`);
+        num = parseInt(prompt(`try a lower number than ${num}:`));
     }
 }
+if (num === ran) { 
+    alert(`Congratulations! You guessed the secret number. it took you ${count} guesses
+    `);
+ }
 
-if (num === ran) { alert('Congratulations! You guessed the secret number.'); }
+ wannaPlay = prompt(`do oyu want to play (yes/no) ?`);
+
+}
+
 
 
     </script>
